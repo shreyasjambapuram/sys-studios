@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavItem, Page } from '../types';
+import { Logo } from './Logo';
 
 const navItems: NavItem[] = [
   { label: 'Services', page: 'services' },
@@ -29,11 +30,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${scrolled ? 'bg-slate-950/70 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => onNavigate('home')}>
-            <div className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                 <div className="absolute inset-0 bg-gradient-to-br from-brand-500 to-accent-600 rounded-xl opacity-100 group-hover:opacity-80 transition-opacity blur-[2px]"></div>
-                 <div className="absolute inset-0 bg-gradient-to-br from-brand-500 to-accent-600 rounded-xl flex items-center justify-center font-bold text-white text-xl shadow-lg border border-white/20">S</div>
+          <div className="flex-shrink-0 cursor-pointer group" onClick={() => onNavigate('home')}>
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                 <div className="absolute inset-0 bg-brand-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <Logo className="w-10 h-10 relative z-10" />
               </div>
               <span className="text-xl font-bold text-white tracking-tight group-hover:text-brand-100 transition-colors">SYS Studios</span>
             </div>
