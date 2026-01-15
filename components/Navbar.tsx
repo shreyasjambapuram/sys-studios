@@ -3,6 +3,7 @@ import { NavItem, Page } from '../types';
 import { Logo } from './Logo';
 
 const navItems: NavItem[] = [
+  { label: 'Home', page: 'home' },
   { label: 'Services', page: 'services' },
   { label: 'Process', page: 'process' },
   { label: 'Work', page: 'work' },
